@@ -1,4 +1,5 @@
 import { join } from 'path'
+import Apis from './apis'
 import Folder from './folder'
 import Shrimps from './shrimps'
 
@@ -7,6 +8,11 @@ import Shrimps from './shrimps'
  * app. Is responsible for APIs and Data.
  */
 export default class Backend extends Folder {
+  /**
+   * list of all [[Apis]]
+   */
+  apis: Apis
+
   /**
    * list of all [[Shrimps]]
    */
@@ -20,5 +26,6 @@ export default class Backend extends Folder {
   constructor(rootPath: string) {
     super(rootPath)
     this.shrimps = new Shrimps(join(rootPath, 'shrimps'))
+    this.apis = new Apis(join(rootPath, 'api'))
   }
 }

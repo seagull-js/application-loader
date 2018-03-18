@@ -19,4 +19,11 @@ class Test extends FunctionalTest {
     const backend = new Backend(rootPath)
     backend.rootPath.should.be.equal(rootPath)
   }
+
+  @test
+  'has child components'() {
+    const backend = new Backend('/some/path')
+    backend.apis.should.be.an('object')
+    backend.shrimps.should.be.an('object')
+  }
 }

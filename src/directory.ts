@@ -22,9 +22,8 @@ export default class Directory extends Folder {
   /**
    * Create a new instance by providing a folder path.
    *
-   * If the second argument [[loadFiles]] is set to true, this will populate
-   * the [[filePaths]] property with the result of the [[listFiles]]
-   * method using the [[rootPath]] as a parameter.
+   * Will populate the [[filePaths]] property with the result of the
+   * [[listFiles]] method using the [[rootPath]] as a parameter.
    *
    * @param rootPath absolute folder where to load files from
    */
