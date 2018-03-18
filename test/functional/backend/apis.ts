@@ -4,8 +4,8 @@ import 'chai/register-should'
 import * as fs from 'fs'
 import { skip, slow, suite, test, timeout } from 'mocha-typescript'
 import { join } from 'path'
-import Test from '../helper/functional_test'
-import { transpileFolder } from '../helper/transpile'
+import Test from '../../helper/functional_test'
+import { transpileFolder } from '../../helper/transpile'
 
 @suite('APIs')
 class FunctionalTest extends Test {

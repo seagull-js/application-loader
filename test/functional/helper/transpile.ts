@@ -4,8 +4,8 @@ import { readFileSync as read } from 'fs'
 import { skip, slow, suite, test, timeout } from 'mocha-typescript'
 import { join } from 'path'
 import * as rfs from 'require-from-string'
-import Test from '../helper/functional_test'
-import { transpileFile, transpileFolder } from '../helper/transpile'
+import Test from '../../helper/functional_test'
+import { transpileFile, transpileFolder } from '../../helper/transpile'
 
 @suite('Transpile')
 class FunctionalTest extends Test {

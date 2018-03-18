@@ -1,6 +1,6 @@
 import { AWS, Resource } from 'cloudformation-declarations'
 import { Memoize } from 'typescript-memoize'
-import Directory from './directory'
+import Directory from '../abstract/directory'
 
 /**
  * Shrimps are an abstraction for AWS SimpleDB Tables.

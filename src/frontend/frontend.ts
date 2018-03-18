@@ -1,4 +1,4 @@
-import Folder from './folder'
+import Folder from '../abstract/folder'
 
 /**
  * Grouping together files & features of the "Frontend" section of a seagull

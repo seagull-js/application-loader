@@ -1,7 +1,7 @@
 import { join } from 'path'
-import Backend from './backend'
-import Folder from './folder'
-import Frontend from './frontend'
+import Folder from './abstract/folder'
+import Backend from './backend/backend'
+import Frontend from './frontend/frontend'
 
 /**
  * This file represents the state of a seagull application, which files

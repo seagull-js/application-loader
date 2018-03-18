@@ -1,7 +1,7 @@
 import { AWS, Resource } from 'cloudformation-declarations'
 import { fromPairs, times } from 'lodash'
 import { Memoize } from 'typescript-memoize'
-import Directory from './directory'
+import Directory from '../abstract/directory'
 
 /**
  * Serverless' special syntax for Events that trigger AWS Lambda Functions.
