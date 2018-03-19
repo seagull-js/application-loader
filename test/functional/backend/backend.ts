@@ -36,6 +36,7 @@ class Test extends FunctionalTest {
   'has child components'() {
     const backend = new Backend('/some/path')
     backend.apis.should.be.an('object')
+    backend.models.should.be.an('object')
     backend.shrimps.should.be.an('object')
   }
 

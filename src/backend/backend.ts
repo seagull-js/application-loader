@@ -1,8 +1,10 @@
 import { AWS, Resource } from 'cloudformation-declarations'
+import { merge } from 'lodash'
 import { join } from 'path'
 import { Memoize } from 'typescript-memoize'
 import Folder from '../abstract/folder'
 import { default as Apis, ILambdaEvent, ILambdaFunction } from './apis'
+import Models from './models'
 import Shrimps from './shrimps'
 
 /**
@@ -16,6 +18,11 @@ export default class Backend extends Folder {
   apis: Apis
 
   /**
+   * list of all [[Models]]
+   */
+  models: Models
+
+  /**
    * list of all [[Shrimps]]
    */
   shrimps: Shrimps
@@ -27,8 +34,9 @@ export default class Backend extends Folder {
    */
   constructor(rootPath: string) {
     super(rootPath)
-    this.shrimps = new Shrimps(join(rootPath, 'shrimps'))
     this.apis = new Apis(join(rootPath, 'api'))
+    this.models = new Models(join(rootPath, 'models'))
+    this.shrimps = new Shrimps(join(rootPath, 'shrimps'))
   }
 
   /**
@@ -38,7 +46,7 @@ export default class Backend extends Folder {
   @Memoize()
   get serverlessTemplate() {
     const functions = this.apis.functions
-    const resources = { Resources: this.shrimps.resources }
-    return { functions, resources }
+    const Resources = merge({}, this.shrimps.resources, this.models.resources)
+    return { functions, resources: { Resources } }
   }
 }

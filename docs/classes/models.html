@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Shrimps | @seagull/application-loader</title>
+	<title>Models | @seagull/application-loader</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="shrimps.html">Shrimps</a>
+					<a href="models.html">Models</a>
 				</li>
 			</ul>
-			<h1>Class Shrimps</h1>
+			<h1>Class Models</h1>
 		</div>
 	</div>
 </header>
@@ -65,7 +65,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Shrimps are an abstraction for AWS SimpleDB Tables.</p>
+						<p>Models are an abstraction for AWS DynamoDB Tables.</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,7 @@
 						<a href="directory.html" class="tsd-signature-type">Directory</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">Shrimps</span>
+								<span class="target">Models</span>
 							</li>
 						</ul>
 					</li>
@@ -89,28 +89,28 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="shrimps.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="models.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="shrimps.html#filepaths" class="tsd-kind-icon">file<wbr>Paths</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="shrimps.html#modules" class="tsd-kind-icon">modules</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="shrimps.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="models.html#filepaths" class="tsd-kind-icon">file<wbr>Paths</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="models.html#modules" class="tsd-kind-icon">modules</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="models.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="shrimps.html#resources" class="tsd-kind-icon">resources</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="models.html#resources" class="tsd-kind-icon">resources</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="shrimps.html#listfiles" class="tsd-kind-icon">list<wbr>Files</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="shrimps.html#loadmodule" class="tsd-kind-icon">load<wbr>Module</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="models.html#listfiles" class="tsd-kind-icon">list<wbr>Files</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="models.html#loadmodule" class="tsd-kind-icon">load<wbr>Module</a></li>
 							</ul>
 						</section>
 					</div>
@@ -122,7 +122,7 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Shrimps<span class="tsd-signature-symbol">(</span>rootPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="shrimps.html" class="tsd-signature-type">Shrimps</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Models<span class="tsd-signature-symbol">(</span>rootPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models.html" class="tsd-signature-type">Models</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -137,8 +137,8 @@
 								<div class="lead">
 									<p>Create a new instance by providing a folder path.</p>
 								</div>
-								<p>Will populate the <a href="shrimps.html#filepaths">filePaths</a> property with the result of the
-								<a href="shrimps.html#listfiles">listFiles</a> method using the <a href="shrimps.html#rootpath">rootPath</a> as a parameter.</p>
+								<p>Will populate the <a href="models.html#filepaths">filePaths</a> property with the result of the
+								<a href="models.html#listfiles">listFiles</a> method using the <a href="models.html#rootpath">rootPath</a> as a parameter.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -151,7 +151,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="shrimps.html" class="tsd-signature-type">Shrimps</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="models.html" class="tsd-signature-type">Models</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -186,7 +186,7 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>array of modules, 1:1 mapped to the <a href="shrimps.html#filepaths">filePaths</a> compiled from source</p>
+							<p>array of modules, 1:1 mapped to the <a href="models.html#filepaths">filePaths</a> compiled from source</p>
 						</div>
 					</div>
 				</section>
@@ -219,13 +219,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in backend/shrimps.ts:14</li>
+									<li>Defined in backend/models.ts:14</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Accessor for a ready-built CloudFormation Resource Object which includes
-									all Shrimps as AWS SimpleDB CloudFormation Templates.</p>
+									all Models as AWS SimpleDB CloudFormation Templates.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -258,7 +258,7 @@
 								<div class="lead">
 									<p>Convenience method for loading files recursively from a folder. Returns
 										an array of file paths as strings. Will be called from the constructor
-									with the pre-filled <a href="shrimps.html#rootpath">rootPath</a>.</p>
+									with the pre-filled <a href="models.html#rootpath">rootPath</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -336,39 +336,39 @@
 					<li class=" tsd-kind-class">
 						<a href="frontend.html" class="tsd-kind-icon">Frontend</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="models.html" class="tsd-kind-icon">Models</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="shrimps.html" class="tsd-kind-icon">Shrimps</a>
+						<a href="models.html" class="tsd-kind-icon">Models</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="shrimps.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="models.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="shrimps.html#filepaths" class="tsd-kind-icon">file<wbr>Paths</a>
+								<a href="models.html#filepaths" class="tsd-kind-icon">file<wbr>Paths</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="shrimps.html#modules" class="tsd-kind-icon">modules</a>
+								<a href="models.html#modules" class="tsd-kind-icon">modules</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="shrimps.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a>
+								<a href="models.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="shrimps.html#resources" class="tsd-kind-icon">resources</a>
+								<a href="models.html#resources" class="tsd-kind-icon">resources</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="shrimps.html#listfiles" class="tsd-kind-icon">list<wbr>Files</a>
+								<a href="models.html#listfiles" class="tsd-kind-icon">list<wbr>Files</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="shrimps.html#loadmodule" class="tsd-kind-icon">load<wbr>Module</a>
+								<a href="models.html#loadmodule" class="tsd-kind-icon">load<wbr>Module</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="shrimps.html" class="tsd-kind-icon">Shrimps</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ilambdaevent.html" class="tsd-kind-icon">ILambda<wbr>Event</a>
 					</li>
