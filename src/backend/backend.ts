@@ -1,6 +1,8 @@
+import { AWS, Resource } from 'cloudformation-declarations'
 import { join } from 'path'
+import { Memoize } from 'typescript-memoize'
 import Folder from '../abstract/folder'
-import Apis from './apis'
+import { default as Apis, ILambdaEvent, ILambdaFunction } from './apis'
 import Shrimps from './shrimps'
 
 /**
@@ -27,5 +29,16 @@ export default class Backend extends Folder {
     super(rootPath)
     this.shrimps = new Shrimps(join(rootPath, 'shrimps'))
     this.apis = new Apis(join(rootPath, 'api'))
+  }
+
+  /**
+   * Accessor for the combined serverless template data of all backend features.
+   * Can be merged with other templates.
+   */
+  @Memoize()
+  get serverlessTemplate() {
+    const functions = this.apis.functions
+    const resources = { Resources: this.shrimps.resources }
+    return { functions, resources }
   }
 }

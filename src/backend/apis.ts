@@ -94,7 +94,7 @@ export default class Apis extends Directory {
   // transform data from API handler into events
   private moduleToEvents(mod: any): ILambdaEvent[] {
     const { method, path } = mod
-    if (path.endsWith('*')) {
+    if (path && path.endsWith('*')) {
       const proxyPath = path.replace(/\/+\*$/, '')
       return [
         { http: { method, path: `${proxyPath}/` } },

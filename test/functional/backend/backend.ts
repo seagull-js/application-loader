@@ -1,10 +1,22 @@
 import { Backend } from '@lib'
+import { generateAPI, generateShrimp } from '@seagull/code-generators'
 import 'chai/register-should'
+import * as fs from 'fs'
 import { skip, slow, suite, test, timeout } from 'mocha-typescript'
 import FunctionalTest from '../../helper/functional_test'
+import { transpileFolder } from '../../helper/transpile'
 
 @suite('Backend')
 class Test extends FunctionalTest {
+  before() {
+    require('@seagull/core')
+    this.mockFolder('./tmp')
+  }
+
+  after() {
+    this.restoreFolder()
+  }
+
   @test
   'can be instantiated'() {
     const rootPath = '/some/path'
@@ -25,5 +37,26 @@ class Test extends FunctionalTest {
     const backend = new Backend('/some/path')
     backend.apis.should.be.an('object')
     backend.shrimps.should.be.an('object')
+  }
+
+  @test
+  'can create serverless/cloudformation template data'() {
+    const srcPath = './tmp/TS'
+    fs.mkdirSync(srcPath)
+    fs.mkdirSync(srcPath + '/api')
+    fs.mkdirSync(srcPath + '/shrimps')
+    generateAPI('Aviate', {}).toFile(`${srcPath}/api/Aviate.ts`)
+    generateShrimp('Scampi', { fields: [] }).toFile(
+      `${srcPath}/shrimps/Scampi.ts`
+    )
+    const dstPath = './tmp/JS'
+    transpileFolder(srcPath, dstPath)
+    const backend = new Backend(dstPath)
+    const sls = backend.serverlessTemplate
+    sls.functions.should.be.an('object')
+    sls.functions['api-Aviate'].should.be.an('object')
+    sls.resources.should.be.an('object')
+    sls.resources.Resources.should.be.an('object')
+    sls.resources.Resources.Scampi.should.be.an('object')
   }
 }
