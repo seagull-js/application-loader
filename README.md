@@ -6,12 +6,15 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 
-This repo maintains the scaffolding capabilities and tooling for AST transforms
-for seagull apps. The primary use case is within the seagul CLI tool, but
-other seagull plugins may use the app skeletton generator for their testsuites.
+This repo contains the application loader for seagull apps. Point it to an app
+directory and you will get an object with all features loaded from files,
+capable of serializing itself into a CloudFormation template for serverless
+deployment.
 
 ## Example Usage
 
 ```typescript
-import {} from '@seagull/application-loader'
+import { App } from '@seagull/application-loader'
+
+const app = new App('path/to/app/folder')
 ```
