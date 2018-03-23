@@ -1,3 +1,4 @@
+export { default as Account } from './services/account'
 export { default as Apis } from './backend/apis'
 export { default as App } from './app'
 export { default as Backend } from './backend/backend'
