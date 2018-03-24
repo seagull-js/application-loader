@@ -2,7 +2,7 @@ import { join } from 'path'
 import Folder from './abstract/folder'
 import Backend from './backend/backend'
 import Frontend from './frontend/frontend'
-import Account from './services/account'
+import Meta from './meta/index'
 
 /**
  * This file represents the state of a seagull application, which files
@@ -24,9 +24,9 @@ export default class App extends Folder {
   frontend: Frontend
 
   /**
-   * precise [[Account]] metadata useful for deployment
+   * metadata for the app
    */
-  account: Account
+  meta: Meta
 
   /**
    * Create an instance of the seagull app located at the given path.
@@ -35,8 +35,8 @@ export default class App extends Folder {
    */
   constructor(rootPath = process.cwd()) {
     super(rootPath || process.cwd())
-    this.account = new Account()
     this.backend = new Backend(join(rootPath, 'backend'))
     this.frontend = new Frontend(join(rootPath, 'frontend'))
+    this.meta = new Meta(rootPath)
   }
 }

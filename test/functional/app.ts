@@ -17,11 +17,13 @@ class FunctionalTest extends Test {
   @test
   'can be instantiated'() {
     const rootPath = './tmp'
-    const app = new App(rootPath)
+    const appPath = `./tmp/demo`
+    new AppGenerator('demo', '0.1.0').toFolder(appPath)
+    const app = new App(appPath)
     app.should.be.an('object')
     app.should.be.instanceOf(App)
-    app.account.should.be.an('object')
     app.backend.should.be.an('object')
     app.frontend.should.be.an('object')
+    app.meta.should.be.an('object')
   }
 }
