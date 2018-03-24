@@ -17,6 +17,12 @@ export default class Account {
   credentials: AWS.SharedIniFileCredentials
 
   /**
+   * checks whether the currently loaded account configuration can be used
+   * for deployment, ... .
+   */
+  isValid: boolean = false
+
+  /**
    * get an [[Account]] instance with the given profile.
    *
    * @param profile if not given, uses `'AWS_PROFILE'` env setting or 'default'
@@ -25,6 +31,7 @@ export default class Account {
     this.profile = profile || process.env.AWS_PROFILE || 'default'
     this.loadFromDotFile()
     this.setEnvironmentConfiguration()
+    this.isValid = !!this.credentials.accessKeyId
   }
 
   // use the AWS SDK to load the file and parse it automatically

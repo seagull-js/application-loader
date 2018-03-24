@@ -20,6 +20,7 @@ class FunctionalTest extends Test {
     const app = new App(rootPath)
     app.should.be.an('object')
     app.should.be.instanceOf(App)
+    app.account.should.be.an('object')
     app.backend.should.be.an('object')
     app.frontend.should.be.an('object')
   }
